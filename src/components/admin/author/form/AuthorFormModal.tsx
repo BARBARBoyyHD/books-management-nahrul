@@ -27,7 +27,8 @@ export function AddAuthorDialog() {
     dob: "",
   });
 
-  const [dobDate, setDobDate] = useState<Date | null>(null);
+  const [dobDate, setDobDate] = useState<Date | undefined>(undefined);
+
 
   const postAuthor = usePostData("/api/v1/admin/author/post", "authors");
 
@@ -43,7 +44,7 @@ export function AddAuthorDialog() {
       onSuccess: () => {
         setOpen(false);
         setForm({ author_name: "", bio: "", dob: "" });
-        setDobDate(null);
+        setDobDate(undefined);
       },
     });
   };
