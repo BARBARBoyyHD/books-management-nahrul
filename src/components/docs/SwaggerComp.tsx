@@ -1,12 +1,13 @@
 "use client";
 
-import React from "react";
 import dynamic from "next/dynamic";
 import "swagger-ui-react/swagger-ui.css";
 import "./_styles/swagger-custom.css";
+
 const SwaggerUI = dynamic(() => import("swagger-ui-react"), {
-  ssr: false
+  ssr: false,
 });
+
 export default function SwaggerComp() {
   return (
     <div className="text-white p-5">
