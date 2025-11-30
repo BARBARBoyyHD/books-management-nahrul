@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
 
     return await getHandler({
       table: "publisher",
-      column: "id, publisher_name, address, created_at",
+      column: "id, publisher_name, address, contact, created_at",
       client: supabase,
         search: search,
       // Define the columns you want to search against

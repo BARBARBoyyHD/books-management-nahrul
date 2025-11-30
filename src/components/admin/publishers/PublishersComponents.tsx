@@ -68,6 +68,8 @@ export default function PublisherComponents() {
                 <tr className="">
                   <th className="p-3 font-semibold">Publisher</th>
                   <th className="p-3 font-semibold">Address</th>
+                  <th className="p-3 font-semibold">Contact</th>
+
                   <th className="p-3 font-semibold text-center">Actions</th>
                 </tr>
               </thead>
@@ -88,6 +90,8 @@ export default function PublisherComponents() {
                   >
                     <td className="p-3">{pub.publisher_name}</td>
                     <td className="p-3">{pub.address}</td>
+                    <td className="p-3">{pub.contact}</td>
+
 
                     <td className="p-3">
                       <div className="flex items-center justify-center gap-3">

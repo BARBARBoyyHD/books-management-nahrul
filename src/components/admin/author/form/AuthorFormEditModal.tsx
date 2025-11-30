@@ -37,7 +37,7 @@ export function EditAuthorDialog({
     dob: "",
   });
 
-  const [dobDate, setDobDate] = useState<Date | null>(null);
+  const [dobDate, setDobDate] = useState<Date | undefined>(undefined);
 
   // ===============================
   // Fetch Author Details
@@ -61,7 +61,7 @@ export function EditAuthorDialog({
         dob: a.dob,
       });
 
-      setDobDate(a.dob ? new Date(a.dob) : null);
+      setDobDate(a.dob ? new Date(a.dob) : undefined);
     });
   }, [authorDetails, open]);
 
