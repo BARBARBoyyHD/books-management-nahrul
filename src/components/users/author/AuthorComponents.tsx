@@ -3,13 +3,13 @@
 import { SpinnerLoading } from "@/components/spinner-loading";
 import { Button } from "@/components/ui/button";
 import { useGetData } from "@/hooks/use-Fetch";
-import type { AuthorResponse } from "@/types/authorTypes";
+import type { Author } from "@/types/authorTypes";
 import { useState } from "react";
 
 export default function AuthorsCardComponents() {
   const [page, setPage] = useState(1);
 
-  const { data, isLoading, error } = useGetData<AuthorResponse>({
+  const { data, isLoading, error } = useGetData<Author>({
     endpoint: "/api/users/authors",
     queryKeyBase: "authors",
     params: {
@@ -71,7 +71,7 @@ export default function AuthorsCardComponents() {
         {/* NEXT */}
         <Button
           variant="outline"
-          disabled={data?.data?.length < 6}
+          disabled={(data?.data?.length ?? 0) < 6}
           onClick={() => setPage(page + 1)}
           className="bg-white/10 backdrop-blur-lg text-white border-white/20 hover:bg-white/20"
         >

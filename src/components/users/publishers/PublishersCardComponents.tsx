@@ -70,7 +70,7 @@ export default function PublishersCardComponents() {
 
         <Button
           variant="outline"
-          disabled={data?.data?.length < 6}
+          disabled={(data?.data?.length ?? 0) < 6}
           onClick={() => setPage(page + 1)}
           className="bg-white/10 backdrop-blur-lg text-white border-white/20 hover:bg-white/20"
         >
