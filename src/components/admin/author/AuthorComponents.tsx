@@ -16,7 +16,7 @@ export default function AuthorComponents() {
 
   const debouncedSearch = useDebounce(search, 300);
 
-  const { data, isLoading,  } = useGetData<Author>({
+  const { data, isLoading } = useGetData<Author>({
     endpoint: "/api/v1/admin/author/get",
     queryKeyBase: "authors",
     params: {
@@ -130,13 +130,12 @@ export default function AuthorComponents() {
           {/* NEXT */}
           <Button
             variant="outline"
-            disabled={data?.data?.length < 6} // auto-disable if no more results
+            disabled={(data?.data?.length ?? 0) < 6}
             onClick={() => setPage(page + 1)}
             className="bg-white/10 backdrop-blur-lg text-white border-white/20 hover:bg-white/20"
           >
             Next
           </Button>
-          
         </div>
       </div>
     </div>

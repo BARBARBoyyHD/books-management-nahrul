@@ -17,7 +17,7 @@ export function DeleteComp({ id, endpoint, queryKey }: DeleteCompProps) {
     <Button
       variant="ghost"
       size="icon"
-      className="text-red-400 hover:text-red-300 hover:bg-zinc-700"
+      className="text-red-300 hover:text-red-300 hover:bg-red-700 bg-red-500/40"
       onClick={() => mutate(id)} // ✅ <-- actually call mutate() here
     >
       <FaTrash size={16} />

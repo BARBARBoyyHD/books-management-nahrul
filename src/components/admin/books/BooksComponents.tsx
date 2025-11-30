@@ -17,7 +17,7 @@ export default function BooksComponents() {
   // Debounce biar gak spam API
   const debouncedSearch = useDebounce(search, 300);
 
-  const { data, isLoading,  } = useGetData<BookResponse>({
+  const { data, isLoading } = useGetData<BookResponse>({
     endpoint: "/api/v1/admin/books/get",
     queryKeyBase: "books",
     params: {
@@ -96,10 +96,7 @@ export default function BooksComponents() {
                   )}
 
                   {books.map((book) => (
-                    <tr
-                      key={book.id}
-                      className=" hover:bg-white/10 transition"
-                    >
+                    <tr key={book.id} className=" hover:bg-white/10 transition">
                       <td className="p-3">{book.title}</td>
                       <td className="p-3">${book.price}</td>
                       <td className="p-3">{book.author?.author_name ?? "-"}</td>
@@ -131,28 +128,26 @@ export default function BooksComponents() {
 
         {/* PAGINATION */}
         <div className="flex justify-center mt-6 gap-4">
-        <Button
-          variant="outline"
-          disabled={page <= 1}
-          onClick={() => setPage(page - 1)}
-          className="bg-white/10 backdrop-blur-lg text-white border-white/20 hover:bg-white/20"
-        >
-          Previous
-        </Button>
+          <Button
+            variant="outline"
+            disabled={page <= 1}
+            onClick={() => setPage(page - 1)}
+            className="bg-white/10 backdrop-blur-lg text-white border-white/20 hover:bg-white/20"
+          >
+            Previous
+          </Button>
 
-        <span className="text-white text-lg font-bold px-3">
-          {page}
-        </span>
-                  
-        {/* NEXT */}
-        <Button
-          variant="outline"
-          disabled={data?.data?.length < 6} // auto-disable if no more results
-          onClick={() => setPage(page + 1)}
-          className="bg-white/10 backdrop-blur-lg text-white border-white/20 hover:bg-white/20"
-        >
-          Next
-        </Button>
+          <span className="text-white text-lg font-bold px-3">{page}</span>
+
+          {/* NEXT */}
+          <Button
+            variant="outline"
+            disabled={(data?.data?.length ?? 0) < 6}
+            onClick={() => setPage(page + 1)}
+            className="bg-white/10 backdrop-blur-lg text-white border-white/20 hover:bg-white/20"
+          >
+            Next
+          </Button>
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ import { FiTrash2 } from "react-icons/fi";
 import { AddPublisherDialog } from "./form/PublishersFormModal";
 import { EditPublisherDialog } from "./form/PublishersFormtEditModal";
 import { Button } from "@/components/ui/button";
+import { DeleteComp } from "@/components/deleteButtonComp";
 
 export default function PublisherComponents() {
   const [page, setPage] = useState(1);
@@ -16,7 +17,7 @@ export default function PublisherComponents() {
 
   const debouncedSearch = useDebounce(search, 300);
 
-  const { data, isLoading, } = useGetData<Publisher>({
+  const { data, isLoading } = useGetData<Publisher>({
     endpoint: "/api/v1/admin/publisher/get",
     queryKeyBase: "publishers",
     params: {
@@ -99,12 +100,11 @@ export default function PublisherComponents() {
                           }}
                         />
 
-                        <button
-                          onClick={() => console.log("delete", pub.id)}
-                          className="p-2 rounded-lg bg-red-500/20 hover:bg-red-500/30 transition"
-                        >
-                          <FiTrash2 className="text-red-300" size={18} />
-                        </button>
+                        <DeleteComp
+                          id={pub.id}
+                          endpoint="/api/v1/admin/publisher/delete"
+                          queryKey="publishers"
+                        />
                       </div>
                     </td>
                   </tr>
@@ -130,7 +130,7 @@ export default function PublisherComponents() {
           {/* NEXT */}
           <Button
             variant="outline"
-            disabled={data?.data?.length < 6} // auto-disable if no more results
+            disabled={(data?.data?.length ?? 0) < 6}
             onClick={() => setPage(page + 1)}
             className="bg-white/10 backdrop-blur-lg text-white border-white/20 hover:bg-white/20"
           >
