@@ -1,0 +1,131 @@
+/* === GLOBAL DARK THEME === */
+.swagger-ui {
+  padding: 20px;
+}
+
+.swagger-ui .topbar {
+  display: none !important; /* hide ugly top bar */
+}
+
+.swagger-ui * {
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* === COLORED TAGS (SUMMARY METHOD BOX) === */
+.swagger-ui .opblock-summary-method {
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  padding: 6px 12px !important;
+}
+
+/* METHOD COLORS */
+.swagger-ui .opblock.opblock-get .opblock-summary-method {
+  background: #3b82f6 !important; /* blue */
+}
+
+.swagger-ui .opblock.opblock-post .opblock-summary-method {
+  background: #22c55e !important; /* green */
+}
+
+.swagger-ui .opblock.opblock-put .opblock-summary-method {
+  background: #eab308 !important; /* yellow */
+  color: rgb(255, 251, 251) !important;
+}
+
+.swagger-ui .opblock.opblock-delete .opblock-summary-method {
+  background: #ef4444 !important; /* red */
+}
+
+.swagger-ui .opblock.opblock-patch .opblock-summary-method {
+  background: #a855f7 !important; /* purple */
+}
+
+.swagger-ui .opblock.opblock-head .opblock-summary-method {
+  background: #14b8a6 !important; /* teal */
+}
+
+/* === OPERATION BOXES === */
+.swagger-ui .opblock {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  box-shadow: 0 0 15px rgba(0,0,0,0.25);
+}
+
+.swagger-ui .opblock-summary {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
+}
+
+/* SUMMARY TEXT (PATH + DESCRIPTION) */
+.swagger-ui .opblock-summary-path,
+.swagger-ui .opblock-summary-description {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+/* === TITLES / HEADERS === */
+.swagger-ui .information-container hgroup h2,
+.swagger-ui .info .title {
+  color: #ffffff !important;
+}
+
+.swagger-ui .info p,
+.swagger-ui .markdown p,
+.swagger-ui table thead tr th,
+.swagger-ui .model-title {
+  color: #cccccc !important;
+}
+
+/* === MODELS === */
+.swagger-ui .model-box {
+  background: #1a1a1a !important;
+  border-color: #333 !important;
+}
+
+.swagger-ui .model .property-row td {
+  color: #e5e5e5 !important;
+}
+
+/* === SCROLLBAR === */
+.swagger-ui ::-webkit-scrollbar {
+  width: 10px;
+}
+
+.swagger-ui ::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+
+/* === INPUT + BUTTON === */
+.swagger-ui input,
+.swagger-ui textarea {
+  background: #1b1b1b !important;
+  color: white !important;
+  border: 1px solid #333 !important;
+}
+
+.swagger-ui .btn {
+  background: #333 !important;
+  border-radius: 8px !important;
+  border: 1px solid #444 !important;
+  color: #fff !important;
+}
+
+.swagger-ui .btn:hover {
+  background: #444 !important;
+}
+
+/* === RESPONSE BOX === */
+.swagger-ui .response-col_description__inner,
+.swagger-ui .response-col_status {
+  color: #fff !important;
+}
+
+.swagger-ui .response-col_description__inner pre {
+  background: #1b1b1b !important;
+  color: #00e676 !important;
+  border-radius: 8px;
+  padding: 10px;
+}

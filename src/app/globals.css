@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+
+@layer base {
+  .bg-image-full {
+    /* Set the background image from the public folder */
+    background-image: url("/bguser2.jpg");
+
+    /* Ensure the image covers the entire viewport */
+    background-size: cover;
+
+    /* Center the image */
+    background-position: center;
+
+    /* Prevent the image from tiling */
+    background-repeat: no-repeat;
+
+    /* Fix the background so it doesn't scroll with the content */
+    background-attachment: fixed;
+  }
+}
